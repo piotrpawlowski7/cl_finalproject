@@ -2,6 +2,7 @@ import logo from '../../assets/logo.svg';
 import './App.scss';
 
 import Header from "../header/Header";
+import Main from "../main/Main";
 // import Button from 'react-bootstrap/Button';
 
 
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
     <Header></Header>
+    <Main></Main>
    
 
     </>
