@@ -1,0 +1,43 @@
+main {
+    max-width:90%;
+    margin:0 auto;
+}
+
+
+.description {
+    width:800px;
+}
+
+
+main .btn {
+    padding: .200rem .5rem;
+    font-size: 0.7rem;
+    margin:2px 2px 2px 2px;
+}
+
+main .td_el {
+   
+    align-items: center;
+    display:flex;
+    justify-content:center;
+    height:90px;
+
+}
+
+main th {
+   
+    text-align: center;
+  
+}
+
+main .content-control {
+    align-items: center;
+    display:flex;
+    justify-content:center;
+    height:90px;
+}
+
+main .content-control ul {
+display:flex;
+flex-direction: column;
+}
