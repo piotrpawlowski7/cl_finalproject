@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
 import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   <Button variant="secondary">Secondary</Button>{' '}
 
         <a
-          className="App-link"
+          className="App-link font-test"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
