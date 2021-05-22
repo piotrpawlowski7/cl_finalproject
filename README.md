@@ -1,3 +1,8 @@
 # cl_finalproject
 
-Hello world
+Projekt końcowy Coderslab
+
+Wykorzystane technologie:
+- React
+- SaSS
+- Bootstrap
