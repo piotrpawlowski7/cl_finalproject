@@ -3,6 +3,7 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Pagination from 'react-bootstrap/Pagination';
+import GetData from '../solutions/Solutions';
 
 function Main() {
     return (
@@ -24,6 +25,8 @@ function Main() {
                 </tr>
             </thead>
             <tbody>
+                
+  
                 <tr>
                 <th scope="row"><div className="td_el">1</div></th>
                 <td><div className="td_el">   
@@ -142,7 +145,7 @@ function Main() {
                                             </div>
                 </td>
                 </tr>
-            
+                <GetData></GetData>
             </tbody>
             </table>
             </div>
