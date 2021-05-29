@@ -1,0 +1,8 @@
+{
+    "solutions": [
+      { "id": 1, "image": "img1", "name": "submenu dla działu tech", "link": "http://", "category": "custom", "tags": "menu, tech, custom", "description": "Przygotowano customowo menu dla wewnetrznej sekcji" },
+      { "id": 2, "image": "img2", "name": "Kolumny custom bootstrap", "link": "http://", "category": "custom", "tags": "menu, tech, custom", "description": "Kolumny bootstrap" },
+      { "id": 3, "image": "img3", "name": "Moduł dla narzędzi", "link": "http://", "category": "natywne", "tags": "narzedzia, modul", "description": "Moduł na niestandardową liczbę elementów. Mało możliwości edycji." },
+      { "id": 4, "image": "img4", "name": "Animate on scroll", "link": "http://", "category": "custom", "tags": "feature, tech, uslugi", "description": "Możliwość stworzenia animacji na scroll." }
+    ]
+  }
