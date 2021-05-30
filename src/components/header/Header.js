@@ -9,10 +9,12 @@ return (
 <header>
   <div className="container">
       <div className="row justify-content-center">
-       <h1>h1. Boostrap heading</h1>
+       <h1>Site Finder</h1>
        </div>
        <div className="row justify-content-center">
-       <p>Lead paragraph. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
+       <p className="text-center">Dedykowane narzędzie do wyszukiwania customowych oraz natywnych rozwiązań możliwych do zaimplementowania w obrębie realizowanych przez nas stron.<br/>
+         Narzędzie ma na celu wsparcie w kreacji, dopasowaniu odpowiedniej formy do przygotowanej treści. <br/>
+         Agregujemy tu sprawdzone i powtarzalne implementacje. Dokumentujemy.</p>
        </div>
       </div>
       </header>
