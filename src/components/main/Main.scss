@@ -3,9 +3,16 @@ main {
     margin:0 auto;
 }
 
+th.description {
+    width:650px;
+}
 
-.description {
-    width:800px;
+td.description {
+    width:650px;
+    display:flex;
+    align-content: center;
+    align-items: center;
+    height: 90px;
 }
 
 

@@ -6,3 +6,24 @@
     margin:4px 4px 4px 4px;
 }
 }
+
+.tags ul {
+    list-style: none;
+    display: flex;
+    padding-left: 0px;
+}
+
+
+@media screen and (max-width:600px) {
+
+    .td_el {
+        justify-content: left;
+    }
+
+    .td_el ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+       
+    }  
+}
