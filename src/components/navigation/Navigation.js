@@ -14,6 +14,7 @@ function Navigation() {
     <Nav className="mr-auto">
       <Nav.Link href="#home">Home</Nav.Link>
       <Nav.Link href="#features">How to use</Nav.Link>
+      <Nav.Link href="#add">Add new</Nav.Link>
       <Nav.Link href="#pricing">About</Nav.Link>
     </Nav>
     <Form inline>

@@ -4,12 +4,14 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Pagination from "react-bootstrap/Pagination";
 import GetData from "../solutions/Solutions";
+import AddSolution from "../solutions/AddSolution";
 
 function Main() {
   return (
     <main>
       <div className="container-fluid">
         <div className="row">
+        <AddSolution></AddSolution>
           <div className="table-responsive">
             <table class="table">
               <thead class="thead-dark">
@@ -27,6 +29,7 @@ function Main() {
                 </tr>
               </thead>
               <tbody>
+                 
                <GetData></GetData>
               </tbody>
             </table>

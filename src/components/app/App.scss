@@ -44,3 +44,13 @@
     transform: rotate(360deg);
   }
 }
+
+
+.btn.nohover:hover {
+  
+  cursor:default !important;
+  box-shadow: 0px;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
