@@ -72,7 +72,7 @@ export default function GetData() {
                 {
                solution.tags.map(innerEl=> (
                   <li key={solution.id}>
-                    <button type="button" class="btn btn-primary">{innerEl}</button>
+                    <button type="button" class="btn btn-primary nohover" disabled>{innerEl}</button>
                   </li>
                 ))
                 }
@@ -90,9 +90,10 @@ export default function GetData() {
                     data-toggle="tooltip"
                     data-placement="top"
                     title="Add"
+                    style={{}}
                   >
                     <i className="fa fa-table"></i>
-                    <FontAwesomeIcon icon={faEdit} />
+                    <FontAwesomeIcon icon={faEdit} style={{marginRight:'0px'}} />
                   </button>
                 </li>
                 <li className="list-inline-item">
@@ -105,7 +106,7 @@ export default function GetData() {
                     title="Edit"
                   >
                     <i className="fa fa-edit"></i>
-                    <FontAwesomeIcon icon={faTrash} />
+                    <FontAwesomeIcon icon={faTrash} style={{marginRight:'0px'}}/>
                   </button>
                 </li>
               </ul>

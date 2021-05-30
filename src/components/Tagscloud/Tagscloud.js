@@ -24,22 +24,13 @@ function Tagscloud() {
     <>
     <div className="tagscloud">
     <div className=" row justify-content-center">
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-secondary">Secondary</button>
-        <button type="button" class="btn btn-success">Success</button>
-        <button type="button" class="btn btn-danger">Danger</button>
-        <button type="button" class="btn btn-warning">Warning</button>
-        <button type="button" class="btn btn-info">Info</button>
-        <button type="button" class="btn btn-light">Light</button>
-        <button type="button" class="btn btn-dark">Dark</button>
-
-       
+  
 <div className="tags">
               <ul>
                 {solutions.map((solution) => (
                solution.tags.map(innerEl=> (
                   <li key={solution.id}>
-                    <button type="button" class="btn btn-primary">{innerEl}</button>
+                    <button type="button" class="btn btn-primary" disabled>{innerEl}</button>
                   </li>
                 ))))
                 }
