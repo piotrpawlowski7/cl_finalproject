@@ -25,7 +25,7 @@ const EditSolutionForm = props => {
 
 <Form
  onSubmit={event => {
-    event.preventDefault()
+    event.preventDefault();
 
     props.updateSolution(solution.id, solution)
   }}
@@ -100,8 +100,9 @@ const EditSolutionForm = props => {
     </Col>
 
     <Col xs="auto">
-      <Button onClick={() => props.setEditing(false)} type="submit" className="mb-2">
-        Wyślij
+        <Button className="mb-2">Update solution</Button>
+      <Button onClick={() => props.setEditing(false)} className="mb-2">
+       Cancel
       </Button>
     </Col>
   </Form.Row>

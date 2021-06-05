@@ -30,14 +30,7 @@ export default function GetData() {
 
   const [editing, setEditing] = useState(false);
   const [currentSolution, setCurrentSolution] = useState(initialFormState);
-  const [form, setForm] = useState({
-    image: "",
-    name: "",
-    link: "",
-    category: "",
-    tags: [],
-    description: "",
-  });
+  const [form, setForm] = useState(initialFormState);
   useEffect(() => {
     setForm(currentSolution);
   });
@@ -48,7 +41,6 @@ export default function GetData() {
     fetch(`${API_URL}/solutions`)
       .then((response) => response.json())
       .then((singleSolution) => setSolutions(singleSolution));
-    console.log(solutions);
   }, [invalidationToken]);
 
   if (solutions.length === 0) {
@@ -57,26 +49,29 @@ export default function GetData() {
 
   const updateSolution = (id, updatedSolution) => {
     setEditing(false);
-    setSolutions(
+    setCurrentSolution(
       solutions.map(solution => (solution.id === id ? updatedSolution : solution))
     );
-    console.log(solutions);
-    fetch(`${API_URL}/solutions/${id}`, {
-      method: "PUT",
+  
+    fetch(`${API_URL}/solutions`, {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        image: form.image,
-        name: form.name,
-        link: form.link,
-        category: form.category,
-        description: form.description,
-        tags: form.tags,
-      }),
+      "body": JSON.stringify({
+        "image": form.image,
+        "name": form.name,
+        "link": form.link,
+        "category": form.category,
+        "description": form.description,
+        "tags": [form.tags]
+    })
     }).then((response) => response.json())
-    .then(() => refreshList());
-    
+    .then((red) => console.log(red))
+    .then(() => refreshList())
+    .catch(function(error) {
+      console.log(error);
+    });
   };
 
   const handleRemoveSolution = (id) => {
@@ -87,6 +82,7 @@ export default function GetData() {
       .then(() => refreshList());
   };
 
+//pobranie rozwiazania po wcisnieciu przycisku
   const handleEditSolution = (form) => {
     setEditing(true);
     setCurrentSolution({
@@ -100,32 +96,25 @@ export default function GetData() {
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setSubmitting(true);
-
-    fetch(`${API_URL}/solutions`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        image: form.image,
-        name: form.name,
-        link: form.link,
-        category: form.category,
-        description: form.description,
-        tags: [form.tags],
-      }),
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   setSubmitting(true);
+  //   fetch(`${API_URL}/solutions`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   function refreshPage() {
     setTimeout(function () {
@@ -169,7 +158,7 @@ export default function GetData() {
         </tr> */}
         
       {solutions.map((solution) => (
-        <tr key={solution.id}>
+        <tr key={solution.name + solution.system}> 
           <th scope="row">
             <div className="td_el">{solution.id}</div>
           </th>
@@ -199,7 +188,7 @@ export default function GetData() {
             <div className="td_el tags_list">
               <ul>
                 {solution.tags.map((innerEl) => (
-                  <li>
+                  <li key={solution.name + solution.system}> 
                     <button
                       type="button"
                       className="btn btn-primary nohover"
