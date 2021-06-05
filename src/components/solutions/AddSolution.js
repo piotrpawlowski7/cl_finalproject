@@ -8,9 +8,7 @@ import "./AddSolution.scss";
 const API_URL = 'http://localhost:3000';
 
 
-export default function AddSolution({
-  
-}) {
+export default function AddSolution() {
     const [form, setForm] = useState({
         image: "",
         name: "",
@@ -20,9 +18,11 @@ export default function AddSolution({
         description: "",
     });
     const [submitting, setSubmitting] = useState(false);
+    
     const handleSubmit = event => {
         event.preventDefault();
         setSubmitting(true);
+        
         fetch(`${API_URL}/solutions`, {
                 method: "POST",
                 headers: {
@@ -44,7 +44,15 @@ export default function AddSolution({
             .catch(err => {
                 console.log(err);
             });
+
+        
     }
+
+    function refreshPage() {
+        setTimeout(function(){
+            window.location.reload(1);
+         }, 1000);
+      }
 
     const handleChange = (e) => {
         const {
@@ -54,13 +62,17 @@ export default function AddSolution({
         console.log(name);
         console.log(value);
         setForm(prevState => {
-            console.log(prevState)
+            // console.log(prevState)
             return {
                 ...prevState,
                 [name]: value
             }
         });
+
+        
     }
+
+    
 
     return (<div className="wrapper">
         <h2>Dodaj rozwiązanie</h2>
@@ -130,7 +142,7 @@ export default function AddSolution({
         Description
       </Form.Label>
       <Form.Control
-        className="mb-2"
+        className="mb-2 description__input"
         name="description"
         placeholder="Uzupełnij opis"
         value={form.description}
@@ -139,7 +151,7 @@ export default function AddSolution({
     </Col>
 
     <Col xs="auto">
-      <Button type="submit" className="mb-2">
+      <Button onClick={refreshPage} type="submit" className="mb-2">
         Wyślij
       </Button>
     </Col>
