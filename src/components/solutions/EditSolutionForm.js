@@ -14,20 +14,20 @@ const EditSolutionForm = props => {
         [ props ]
       )
 
-      
-  const handleInputChange = event => {
+
+  const handleInputChange = (event) => {
     const { name, value } = event.target
 
     setSolution({ ...solution, [name]: value })
   }
 
   return (
-
-<Form
- onSubmit={event => {
+// prevent before 2nd button submit propagation
+<Form onSubmit={(event) => {
+        console.log(solution.id);
+        console.log(solution);
     event.preventDefault();
-
-    props.updateSolution(solution.id, solution)
+     props.updateSolution(solution.id, solution)
   }}
 >
     <Form.Row className="align-items-center">
@@ -38,7 +38,7 @@ const EditSolutionForm = props => {
       <Form.Control
         className="mb-2"
         name="image"
-        placeholder="Wklej adres"
+        placeholder="Dodaj link do grafiki"
         value={solution.image}
         onChange={handleInputChange}
       />
@@ -56,7 +56,7 @@ const EditSolutionForm = props => {
       <Form.Control
         className="mb-2"
         name="link"
-        placeholder="Wklej adres http://"
+        placeholder="Dodaj link do www"
         value={solution.link}
         onChange={handleInputChange}
       />

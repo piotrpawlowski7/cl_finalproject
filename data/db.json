@@ -64,15 +64,26 @@
       "description": "Możliwość stworzenia animacji na scroll."
     },
     {
-      "image": "",
-      "name": "",
-      "link": "",
-      "category": "",
-      "description": "",
+      "image": "https://seventhseasoncreative.com/wp-content/uploads/2020/05/aos.jpg",
+      "name": "AOS",
+      "link": "http://www.someaddress.here/",
+      "category": "natywne",
+      "description": "Przygotowano customowo menu dla wewnetrznej sekcji",
       "tags": [
-        []
+        "custom"
       ],
       "id": 6
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      "name": "Moduł dla narzędzi",
+      "link": "www",
+      "category": "custom",
+      "description": "brak",
+      "tags": [
+        "feature"
+      ],
+      "id": 7
     }
   ]
 }
