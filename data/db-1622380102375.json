@@ -4,7 +4,7 @@
       "id": 1,
       "image": "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80",
       "name": "submenu dla działu tech",
-      "link": "http://",
+      "link": "http://www.w3schools.com",
       "category": "custom",
       "tags": [
         "menu",
@@ -17,7 +17,7 @@
       "id": 2,
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2252&q=80",
       "name": "Kolumny custom bootstrap",
-      "link": "http://",
+      "link": "http://www.someaddress.here",
       "category": "custom",
       "tags": [
         "custom",
@@ -29,7 +29,7 @@
       "id": 3,
       "image": "https://images.unsplash.com/photo-1558673532-102034a5f6e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80",
       "name": "Moduł dla narzędzi",
-      "link": "http://",
+      "link": "http://www.wp.pl",
       "category": "natywne",
       "tags": [
         "moduł",
@@ -46,6 +46,19 @@
       "tags": [
         "feature",
         "tech",
+        "uslugi"
+      ],
+      "description": "Możliwość stworzenia animacji na scroll."
+    },
+    {
+      "id": 5,
+      "image": "https://image.freepik.com/free-vector/linear-flat-responsive-web-design-layout-website-hero-image-illustration-app-programming-technology-software-concept-tablet-laptop-smartphone-with-wireframe_126523-2654.jpg",
+      "name": "Hero element",
+      "link": "http://",
+      "category": "custom",
+      "tags": [
+        "dpe",
+        "full-width",
         "uslugi"
       ],
       "description": "Możliwość stworzenia animacji na scroll."

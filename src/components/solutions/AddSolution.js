@@ -157,47 +157,7 @@ export default function AddSolution() {
     </Col>
   </Form.Row>
   </Form>
-        {/* <tr>
-        <th scope="row">
-          <div className="td_el"></div>
-        </th>
-        <td>
-          <div className="td_el">
-          <label>Image<input type="text" name="image" value={form.image} onChange={handleChange} placeholder="Wklej adres"/>
-            </label>
-          </div>
-        </td>
-        <td>
-          <div className="td_el">  <label>Nazwa<input type="text" name="name" value={form.name} onChange={handleChange}/>
-            </label></div>
-        </td>
-        <td>
-          <div className="td_el">
-          <label>Link<input type="text" name="link" value={form.link} onChange={handleChange}/>
-            </label>
-          </div>
-        </td>
-        <td>
-          <div className="td_el">  <label>Category<input type="text" name="category" value={form.category} onChange={handleChange}/>
-            </label>
-            </div>
-        </td>
-        <td>
-          <div className="td_el tags_list">
-          <label>Tags<input type="text" name="tags" value={form.tags} onChange={handleChange}/>
-            </label>
-          </div>
-        </td>
-        <td className="description">  <label>Description<input type="text" name="description" value={form.description} onChange={handleChange}/>
-            </label></td>
-        <td>
-          <div className="content-control">
-          <input type="submit" value="Wyślij"/>
-          </div>
-        </td>
-
-      </tr> 
-       </form> */}
+       
       </div>
 );
 }
