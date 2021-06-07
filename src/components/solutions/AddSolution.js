@@ -19,6 +19,7 @@ export default function AddSolution() {
         description: "",
     });
     const [submitting, setSubmitting] = useState(false);
+
     
     const handleSubmit = event => {
         event.preventDefault();

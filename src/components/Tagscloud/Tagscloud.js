@@ -30,7 +30,7 @@ function Tagscloud() {
                 {solutions.map((solution) => (
                solution.tags.map(innerEl=> (
                   <li key={solution.id}>
-                    <button type="button" class="btn btn-primary" disabled>{innerEl}</button>
+                    <button type="button" className="btn btn-primary" disabled>{innerEl}</button>
                   </li>
                 ))))
                 }

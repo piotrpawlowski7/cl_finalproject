@@ -100,7 +100,7 @@ const EditSolutionForm = props => {
     </Col>
 
     <Col xs="auto">
-        <Button className="mb-2">Update solution</Button>
+        <Button type="submit" className="mb-2">Update solution</Button>
       <Button onClick={() => props.setEditing(false)} className="mb-2">
        Cancel
       </Button>

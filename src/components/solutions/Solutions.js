@@ -87,6 +87,7 @@ export default function Solutions() {
       .then(() => refreshList());
   };
 
+
   //pobranie rozwiazania po wcisnieciu przycisku
   const handleEditSolution = (solution) => {
     setEditing(true);
@@ -99,7 +100,7 @@ export default function Solutions() {
       tags: solution.tags,
       description:solution.description,
     });
-
+    
   };
 
   function refreshPage() {
@@ -129,6 +130,7 @@ export default function Solutions() {
             <h2>Edytuj rozwiązanie</h2>
 
             <EditSolutionForm
+            
               editing={editing}
               setEditing={setEditing}
               currentSolution={currentSolution}
@@ -160,8 +162,8 @@ export default function Solutions() {
                 </tr>
               </thead>
               
-              {solutions.map((solution) => (
-                <tr key={solution.name + solution.system}>
+              {solutions.map((solution, index) => (
+                <tr key={index}>
                   <th scope="row">
                     <div className="td_el">{solution.id}</div>
                   </th>
@@ -190,14 +192,14 @@ export default function Solutions() {
                   <td>
                     <div className="td_el tags_list">
                       <ul>
-                        {solution.tags.map((innerEl) => (
-                          <li key={innerEl + solution.id}>
+                        {solution.tags.map((tag) => (
+                          <li key={tag}>
                             <button
                               type="button"
                               className="btn btn-primary nohover"
                               disabled
                             >
-                              {innerEl}
+                              {tag}
                             </button>
                           </li>
                         ))}
@@ -216,7 +218,7 @@ export default function Solutions() {
                             data-placement="top"
                             title="Add"
                             style={{}}
-                            onClick={() => handleEditSolution(solution)}
+                            onClick={(solutions) => {handleEditSolution(solution);}}
                           >
                             <i className="fa fa-table"></i>
                             <FontAwesomeIcon
