@@ -35,7 +35,7 @@
         "moduł",
         "narzedzia"
       ],
-      "description": "Moduł na niestandardową liczbę elementów. Mało możliwości edycji."
+      "description": "The react package contains only the functionality necessary to define React components. It is typically used together with a React renderer like react-dom for the web, or react-native for the native environments."
     },
     {
       "id": 4,
@@ -51,24 +51,11 @@
       "description": "Możliwość stworzenia animacji na scroll."
     },
     {
-      "id": 5,
-      "image": "https://image.freepik.com/free-vector/linear-flat-responsive-web-design-layout-website-hero-image-illustration-app-programming-technology-software-concept-tablet-laptop-smartphone-with-wireframe_126523-2654.jpg",
-      "name": "Hero element",
-      "link": "http://",
-      "category": "custom",
-      "tags": [
-        "dpe",
-        "full-width",
-        "uslugi"
-      ],
-      "description": "Możliwość stworzenia animacji na scroll."
-    },
-    {
-      "image": "https://seventhseasoncreative.com/wp-content/uploads/2020/05/aos.jpg",
-      "name": "AOS",
+      "image": "https://miro.medium.com/max/3360/1*CcTWyKvkq7IH6Of0Sq0pQQ.png",
+      "name": "React",
       "link": "http://www.someaddress.here/",
       "category": "natywne",
-      "description": "Przygotowano customowo menu dla wewnetrznej sekcji",
+      "description": "In the component above, we create a simple input form(which currently doesn't do anything) and a mock list of the results that are going to be displayed.",
       "tags": [
         "custom"
       ],
@@ -79,7 +66,7 @@
       "name": "Moduł dla narzędzi",
       "link": "www",
       "category": "custom",
-      "description": "brak",
+      "description": " React will be in development mode. The development version includes extra warnings about common mistakes, whereas the production version includes extra performance optimizations and strips all error messages.",
       "tags": [
         "feature"
       ],
