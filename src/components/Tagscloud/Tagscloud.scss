@@ -11,6 +11,11 @@
     list-style: none;
     display: flex;
     padding-left: 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 

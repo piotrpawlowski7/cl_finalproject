@@ -10,6 +10,7 @@ const API_URL = 'http://localhost:3000';
 
 export default function AddSolution() {
     const [form, setForm] = useState({
+        id: null,
         image: "",
         name: "",
         link: "",
@@ -89,7 +90,7 @@ export default function AddSolution() {
       <Form.Control
         className="mb-2"
         name="image"
-        placeholder="Wklej adres"
+        placeholder="Dodaj link do grafiki"
         value={form.image}
         onChange={handleChange}
       />
@@ -107,7 +108,7 @@ export default function AddSolution() {
       <Form.Control
         className="mb-2"
         name="link"
-        placeholder="Wklej adres http://"
+        placeholder="Dodaj link do www"
         value={form.link}
         onChange={handleChange}
       />

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -9,12 +9,14 @@ import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 import EditSolutionForm from "./EditSolutionForm";
 import "./AddSolution.scss";
+import AddSolution from "../solutions/AddSolution";
 
 import "./Solutions.scss";
-const API_URL = "http://localhost:3000";
-// import { API_URL } from './../../constants';
 
-export default function GetData() {
+
+const API_URL = "http://localhost:3000";
+
+export default function Solutions() {
   const [solutions, setSolutions] = useState([]);
   const [invalidationToken, setInvalidationToken] = useState(Math.random());
 
@@ -30,11 +32,10 @@ export default function GetData() {
 
   const [editing, setEditing] = useState(false);
   const [currentSolution, setCurrentSolution] = useState(initialFormState);
-  const [form, setForm] = useState(initialFormState);
+  const [form, setForm] = useState([initialFormState]);
   useEffect(() => {
     setForm(currentSolution);
   });
-  const [submitting, setSubmitting] = useState(false);
 
   const refreshList = () => setInvalidationToken(Math.random());
   useEffect(() => {
@@ -45,33 +46,37 @@ export default function GetData() {
 
   if (solutions.length === 0) {
     return null;
-  }
+  };
 
   const updateSolution = (id, updatedSolution) => {
     setEditing(false);
+    console.log(id,'iddddd')
     setCurrentSolution(
-      solutions.map(solution => (solution.id === id ? updatedSolution : solution))
+      solutions.map((solution) =>
+        solution.id === id ? updatedSolution : solution
+      )
     );
-  
-    fetch(`${API_URL}/solutions`, {
-      method: "POST",
+
+    fetch(`${API_URL}/solutions/`+id, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       "body": JSON.stringify({
-        "image": form.image,
-        "name": form.name,
-        "link": form.link,
-        "category": form.category,
-        "description": form.description,
-        "tags": [form.tags]
+        // "id": updatedSolution.id,
+        "image": updatedSolution.image,
+        "name": updatedSolution.name,
+        "link": updatedSolution.link,
+        "category": updatedSolution.category,
+        "description": updatedSolution.description,
+        "tags": [updatedSolution.tags]
     })
-    }).then((response) => response.json())
-    .then((red) => console.log(red))
-    .then(() => refreshList())
-    .catch(function(error) {
-      console.log(error);
-    });
+    })
+      .then((response) => response.json())
+      .then(() => refreshList())
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   const handleRemoveSolution = (id) => {
@@ -82,39 +87,20 @@ export default function GetData() {
       .then(() => refreshList());
   };
 
-//pobranie rozwiazania po wcisnieciu przycisku
-  const handleEditSolution = (form) => {
+  //pobranie rozwiazania po wcisnieciu przycisku
+  const handleEditSolution = (solution) => {
     setEditing(true);
     setCurrentSolution({
-      id: form.id,
-      image: form.image,
-      name: form.name,
-      link: form.link,
-      category: form.category,
-      tags: form.tags,
-      description: form.description,
+      id: solution.id,
+      image: solution.image,
+      name: solution.name,
+      link:solution.link,
+      category: solution.category,
+      tags: solution.tags,
+      description:solution.description,
     });
-  };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   setSubmitting(true);
-  //   fetch(`${API_URL}/solutions`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //     }),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+  };
 
   function refreshPage() {
     setTimeout(function () {
@@ -135,116 +121,135 @@ export default function GetData() {
     });
   };
 
-
-
   return (
     <>
       <div className="wrapper">
-        <h2>Edytuj rozwiązanie</h2>
+        {editing ? (
+          <Fragment>
+            <h2>Edytuj rozwiązanie</h2>
 
-        <EditSolutionForm
-          editing={editing}
-          setEditing={setEditing}
-          currentSolution={currentSolution}
-          updateSolution={updateSolution}
-        ></EditSolutionForm>
+            <EditSolutionForm
+              editing={editing}
+              setEditing={setEditing}
+              currentSolution={currentSolution}
+              updateSolution={updateSolution}
+            ></EditSolutionForm>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <AddSolution></AddSolution>
+          </Fragment>
+        )}
       </div>
-      {/* <tr>
-          <TextInput value={name} name="name" onChange={onChange}></TextInput>
-          <TextInput value={last} name="last" onChange={onChange} ></TextInput>
-          <td>
-            <button onClick={this.saveChanges} >Done</button>
-          </td>
-        </tr> */}
-        
-      {solutions.map((solution) => (
-        <tr key={solution.name + solution.system}> 
-          <th scope="row">
-            <div className="td_el">{solution.id}</div>
-          </th>
-          <td>
-            <div className="td_el">
-              <img
-                src={solution.image}
-                className="img-responsive"
-                width="150"
-                height="100"
-                alt=""
-              ></img>
-            </div>
-          </td>
-          <td>
-            <div className="td_el">{solution.name}</div>
-          </td>
-          <td>
-            <div className="td_el">
-              <a href={solution.link}>Link</a>
-            </div>
-          </td>
-          <td>
-            <div className="td_el">{solution.category}</div>
-          </td>
-          <td>
-            <div className="td_el tags_list">
-              <ul>
-                {solution.tags.map((innerEl) => (
-                  <li key={solution.name + solution.system}> 
-                    <button
-                      type="button"
-                      className="btn btn-primary nohover"
-                      disabled
-                    >
-                      {innerEl}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </td>
-          <td className="description">{solution.description}</td>
-          <td>
-            <div className="content-control">
-              <ul className="list-inline m-0">
-                <li className="list-inline-item">
-                  <button
-                    className="btn btn-success btn-sm rounded-0"
-                    type="button"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="Add"
-                    style={{}}
-                    onClick={() => {
-                      handleEditSolution(solution);
-                    }}
-                  >
-                    <i className="fa fa-table"></i>
-                    <FontAwesomeIcon
-                      icon={faEdit}
-                      style={{ marginRight: "0px" }}
-                    />
-                  </button>
-                </li>
-                <li className="list-inline-item">
-                  <button
-                    onClick={() => handleRemoveSolution(solution.id)}
-                    className="btn btn-danger btn-sm rounded-0"
-                    type="button"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="Edit"
-                  >
-                    <i className="fa fa-edit"></i>
-                    <FontAwesomeIcon
-                      icon={faTrash}
-                      style={{ marginRight: "0px" }}
-                    />
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </td>
-        </tr>
-      ))}
+      <div className="container-fluid">
+        <div className="row">
+          <div className="table-responsive">
+            <table className="table">
+              <thead className="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Screen</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Link</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Tags</th>
+                  <th scope="col" className="description">
+                    Description
+                  </th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              
+              {solutions.map((solution) => (
+                <tr key={solution.name + solution.system}>
+                  <th scope="row">
+                    <div className="td_el">{solution.id}</div>
+                  </th>
+                  <td>
+                    <div className="td_el">
+                      <img
+                        src={solution.image}
+                        className="img-responsive"
+                        width="150"
+                        height="100"
+                        alt=""
+                      ></img>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="td_el">{solution.name}</div>
+                  </td>
+                  <td>
+                    <div className="td_el">
+                      <a href={solution.link}>Link</a>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="td_el">{solution.category}</div>
+                  </td>
+                  <td>
+                    <div className="td_el tags_list">
+                      <ul>
+                        {solution.tags.map((innerEl) => (
+                          <li key={innerEl + solution.id}>
+                            <button
+                              type="button"
+                              className="btn btn-primary nohover"
+                              disabled
+                            >
+                              {innerEl}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </td>
+                  <td className="description">{solution.description}</td>
+                  <td>
+                    <div className="content-control">
+                      <ul className="list-inline m-0">
+                        <li className="list-inline-item">
+                          <button
+                            className="btn btn-success btn-sm rounded-0"
+                            type="button"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Add"
+                            style={{}}
+                            onClick={() => handleEditSolution(solution)}
+                          >
+                            <i className="fa fa-table"></i>
+                            <FontAwesomeIcon
+                              icon={faEdit}
+                              style={{ marginRight: "0px" }}
+                            />
+                          </button>
+                        </li>
+                        <li className="list-inline-item">
+                          <button
+                            onClick={() => handleRemoveSolution(solution.id)}
+                            className="btn btn-danger btn-sm rounded-0"
+                            type="button"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Edit"
+                          >
+                            <i className="fa fa-edit"></i>
+                            <FontAwesomeIcon
+                              icon={faTrash}
+                              style={{ marginRight: "0px" }}
+                            />
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </table>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

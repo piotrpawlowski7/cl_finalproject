@@ -4,15 +4,37 @@ main {
 }
 
 th.description {
-    width:650px;
+    width:550px;
 }
 
 td.description {
-    width:650px;
+    width:550px;
     display:flex;
     align-content: center;
     align-items: center;
     height: 90px;
+}
+
+@media screen and (max-width:1450px) {
+    th.description {
+        width:300px;
+    }
+    td.description {
+width:300px;
+    }
+}
+
+
+@media screen and (max-width:1200px) {
+
+    th.description {
+        width:200px;
+    }
+    td.description {
+width:200px;
+font-size:13px;
+line-height:1rem;
+    }
 }
 
 
