@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
+// import MultiSelect from "react-multi-select-component";
+// import ReactDOM from "react-dom";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 
+import { Select } from 'antd';
+import 'antd/dist/antd.css';
+
+import "./EditSolution.scss";
+
 const EditSolutionForm = props => {
-    const [ solution, setSolution ] = useState(props.currentSolution)
+    const [solution, setSolution ] = useState(props.currentSolution)
+    // const [selected, setSelected] = useState([]);
 
     useEffect(
         () => {
@@ -17,19 +25,54 @@ const EditSolutionForm = props => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target
-
-    setSolution({ ...solution, [name]: value })
+    setSolution({ ...solution, [name]: value });
+    
   }
+
+  
+const { Option } = Select;
+
+const children = [];
+for (let i = 0; i < solution.tags.length; i++) {
+  children.push(<Option key={i}>{solution.tags[i]}</Option>);
+}
+
+//   const options =[  
+//     { label: solution.tags[0], value: solution.tags[0]},
+//     { label: solution.tags[1], value: solution.tags[1]},
+//     { label: solution.tags[2], value: solution.tags[2]}
+// ];
+
+// const customValueRenderer = (selected, options) => {
+//   return selected.length
+//     ? selected.map(({ label }) => "✔️ " + label)
+//     : "😶 No Items Selected";
+// };
+
+function handleChange(value) {
+  console.log(`before click ${solution.tags}`);
+  for (let i = 0; i < value.length; i++) {
+    solution.tags=[...value]
+  }
+  console.log(`after click`+solution);
+  console.log(`after click ${solution.tags}`);
+  console.log(`selected ${value}`);
+
+
+}
 
   return (
 // prevent before 2nd button submit propagation
-<Form onSubmit={(event) => {
+<>
+<form onSubmit={(event) => {
         console.log(solution.id);
         console.log(solution);
     event.preventDefault();
      props.updateSolution(solution.id, solution)
   }}
 >
+
+
     <Form.Row className="align-items-center">
     <Col xs="auto">
       <Form.Label htmlFor="inlineFormInput" srOnly>
@@ -75,6 +118,10 @@ const EditSolutionForm = props => {
       />
     </Col>
     <Col xs="auto">
+    <Select
+      mode="tags" allowClear  defaultValue={solution.tags}  tokenSeparators={[',']} style={{ width: '100%' }} placeholder="Tags Mode" onChange={handleChange}>
+    {/* {children} */}
+  </Select>
       <Form.Label htmlFor="inlineFormInput" srOnly>
         Tags
       </Form.Label>
@@ -106,7 +153,18 @@ const EditSolutionForm = props => {
       </Button>
     </Col>
   </Form.Row>
-  </Form>
+  </form>
+  {/* <div>
+  <h1>Select Fruits</h1>
+  <pre>{JSON.stringify(selected)}</pre>
+  <MultiSelect
+    options={options}
+    selected={selected}
+    onChange={setSelected}
+    labelledBy={"Select"}
+    customValueRenderer={customValueRenderer}
+  /></div> */}
+  </>
   )
 }
 

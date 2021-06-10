@@ -13,7 +13,6 @@ import AddSolution from "../solutions/AddSolution";
 
 import "./Solutions.scss";
 
-
 const API_URL = "http://localhost:3000";
 
 export default function Solutions() {
@@ -46,31 +45,31 @@ export default function Solutions() {
 
   if (solutions.length === 0) {
     return null;
-  };
+  }
 
   const updateSolution = (id, updatedSolution) => {
     setEditing(false);
-    console.log(id,'iddddd')
+    console.log(id, "iddddd");
     setCurrentSolution(
       solutions.map((solution) =>
         solution.id === id ? updatedSolution : solution
       )
     );
 
-    fetch(`${API_URL}/solutions/`+id, {
+    fetch(`${API_URL}/solutions/` + id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      "body": JSON.stringify({
+      body: JSON.stringify({
         // "id": updatedSolution.id,
-        "image": updatedSolution.image,
-        "name": updatedSolution.name,
-        "link": updatedSolution.link,
-        "category": updatedSolution.category,
-        "description": updatedSolution.description,
-        "tags": [updatedSolution.tags]
-    })
+        image: updatedSolution.image,
+        name: updatedSolution.name,
+        link: updatedSolution.link,
+        category: updatedSolution.category,
+        description: updatedSolution.description,
+        tags: [updatedSolution.tags],
+      }),
     })
       .then((response) => response.json())
       .then(() => refreshList())
@@ -87,7 +86,6 @@ export default function Solutions() {
       .then(() => refreshList());
   };
 
-
   //pobranie rozwiazania po wcisnieciu przycisku
   const handleEditSolution = (solution) => {
     setEditing(true);
@@ -95,12 +93,11 @@ export default function Solutions() {
       id: solution.id,
       image: solution.image,
       name: solution.name,
-      link:solution.link,
+      link: solution.link,
       category: solution.category,
       tags: solution.tags,
-      description:solution.description,
+      description: solution.description,
     });
-    
   };
 
   function refreshPage() {
@@ -122,15 +119,16 @@ export default function Solutions() {
     });
   };
 
+  
+
   return (
     <>
       <div className="wrapper">
         {editing ? (
           <Fragment>
             <h2>Edytuj rozwiązanie</h2>
-
+          
             <EditSolutionForm
-            
               editing={editing}
               setEditing={setEditing}
               currentSolution={currentSolution}
@@ -144,6 +142,7 @@ export default function Solutions() {
         )}
       </div>
       <div className="container-fluid">
+     
         <div className="row">
           <div className="table-responsive">
             <table className="table">
@@ -161,7 +160,7 @@ export default function Solutions() {
                   <th scope="col"></th>
                 </tr>
               </thead>
-              
+
               {solutions.map((solution, index) => (
                 <tr key={index}>
                   <th scope="row">
@@ -191,6 +190,7 @@ export default function Solutions() {
                   </td>
                   <td>
                     <div className="td_el tags_list">
+                      
                       <ul>
                         {solution.tags.map((tag) => (
                           <li key={tag}>
@@ -218,7 +218,9 @@ export default function Solutions() {
                             data-placement="top"
                             title="Add"
                             style={{}}
-                            onClick={(solutions) => {handleEditSolution(solution);}}
+                            onClick={(solutions) => {
+                              handleEditSolution(solution);
+                            }}
                           >
                             <i className="fa fa-table"></i>
                             <FontAwesomeIcon
