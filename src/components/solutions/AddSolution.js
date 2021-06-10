@@ -4,6 +4,8 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
 import "./AddSolution.scss";
+import { Select } from 'antd';
+import 'antd/dist/antd.css';
 
 const API_URL = 'http://localhost:3000';
 
@@ -36,7 +38,7 @@ export default function AddSolution() {
                     "link": form.link,
                     "category": form.category,
                     "description": form.description,
-                    "tags": [form.tags]
+                    "tags": form.tags
                 })
             })
             .then(response => response.json())
@@ -70,13 +72,31 @@ export default function AddSolution() {
                 [name]: value
             }
         });
-
-        
     }
 
+     
+const { Option } = Select;
+
+const children = [];
+for (let i = 0; i < form.tags.length; i++) {
+  children.push(<Option key={i}>{form.tags[i]}</Option>);
+}
+
+
+function handleTagChange(value) {
+  console.log(`sol.tags before func  ${form.tags}`);
+  console.log(`value before func: `+value);
+
+  form.tags=[];
+  console.log(`after clear:  ${form.tags}`);
+  form.tags=[...value]
+  console.log(`value after mapping: `+value);
+  console.log(`sol.tags after mapping: ${form.tags}`);
+  console.log(form);
+}
     
 
-    return (<div className="wrapper">
+    return (<div className="wrapper addsolution">
         <h2>Dodaj rozwiązanie</h2>
  { submitting &&
             <div>Zapisywanie...</div>
@@ -128,7 +148,11 @@ export default function AddSolution() {
       />
     </Col>
     <Col xs="auto">
-      <Form.Label htmlFor="inlineFormInput" srOnly>
+    <Select
+      mode="tags" allowClear  defaultValue={form.tags}  tokenSeparators={[',']} style={{ width: '100%' }} placeholder="Wypisz tagi po przecinku" onChange={handleTagChange}>
+    {/* {children} */}
+  </Select>
+      {/* <Form.Label htmlFor="inlineFormInput" srOnly>
         Tags
       </Form.Label>
       <Form.Control
@@ -137,7 +161,7 @@ export default function AddSolution() {
         placeholder="Uzupełnij tagi"
         value={form.tags}
         onChange={handleChange}
-      />
+      /> */}
     </Col>
     <Col xs="auto">
       <Form.Label htmlFor="inlineFormInput" srOnly>

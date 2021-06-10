@@ -50,16 +50,17 @@ for (let i = 0; i < solution.tags.length; i++) {
 // };
 
 function handleChange(value) {
-  console.log(`before click ${solution.tags}`);
-  for (let i = 0; i < value.length; i++) {
-    solution.tags=[...value]
-  }
-  console.log(`after click`+solution);
-  console.log(`after click ${solution.tags}`);
-  console.log(`selected ${value}`);
+  console.log(`sol.tags before func  ${solution.tags}`);
+  console.log(`value before func: `+value);
 
-
+  solution.tags=[];
+  console.log(`after clear:  ${solution.tags}`);
+  solution.tags=[...value]
+  console.log(`value after mapping: `+value);
+  console.log(`sol.tags after mapping: ${solution.tags}`);
+  console.log(solution);
 }
+
 
   return (
 // prevent before 2nd button submit propagation
@@ -73,7 +74,7 @@ function handleChange(value) {
 >
 
 
-    <Form.Row className="align-items-center">
+    <Form.Row className="align-items-center editsolutionform">
     <Col xs="auto">
       <Form.Label htmlFor="inlineFormInput" srOnly>
         Image
@@ -119,10 +120,10 @@ function handleChange(value) {
     </Col>
     <Col xs="auto">
     <Select
-      mode="tags" allowClear  defaultValue={solution.tags}  tokenSeparators={[',']} style={{ width: '100%' }} placeholder="Tags Mode" onChange={handleChange}>
+      mode="tags" allowClear  defaultValue={solution.tags}  tokenSeparators={[',']} style={{ width: '100%' }} placeholder="Edytuj tagi" onChange={handleChange}>
     {/* {children} */}
   </Select>
-      <Form.Label htmlFor="inlineFormInput" srOnly>
+      {/* <Form.Label htmlFor="inlineFormInput" srOnly>
         Tags
       </Form.Label>
       <Form.Control
@@ -131,7 +132,7 @@ function handleChange(value) {
         placeholder="Uzupełnij tagi"
         value={solution.tags}
         onChange={handleInputChange}
-      />
+      /> */}
     </Col>
     <Col xs="auto">
       <Form.Label htmlFor="inlineFormInput" srOnly>

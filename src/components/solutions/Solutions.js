@@ -49,7 +49,7 @@ export default function Solutions() {
 
   const updateSolution = (id, updatedSolution) => {
     setEditing(false);
-    console.log(id, "iddddd");
+    console.log("iddddd:",id);
     setCurrentSolution(
       solutions.map((solution) =>
         solution.id === id ? updatedSolution : solution
@@ -68,7 +68,7 @@ export default function Solutions() {
         link: updatedSolution.link,
         category: updatedSolution.category,
         description: updatedSolution.description,
-        tags: [updatedSolution.tags],
+        tags: updatedSolution.tags,
       }),
     })
       .then((response) => response.json())

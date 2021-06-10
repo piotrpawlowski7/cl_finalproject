@@ -7,11 +7,8 @@
       "category": "custom",
       "description": "Przygotowano customowo menu dla wewnetrznej sekcji",
       "tags": [
-        
-          "menu",
-          "content",
-          "tech"
-        
+        "menu",
+        "tech"
       ],
       "id": 1
     },
@@ -19,7 +16,7 @@
       "id": 2,
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2252&q=80",
       "name": "Kolumny custom bootstrap",
-      "link": "http://www.someaddress.here",
+      "link": "http://www.someaddress.n[here",
       "category": "custom",
       "tags": [
         "custom",
@@ -73,6 +70,19 @@
         "feature"
       ],
       "id": 7
+    },
+    {
+      "image": "tes",
+      "name": "t",
+      "link": "tt",
+      "category": "test",
+      "description": "test",
+      "tags": [
+        "test",
+        "dwa",
+        "trzy"
+      ],
+      "id": 8
     }
   ]
 }
