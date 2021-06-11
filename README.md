@@ -9,4 +9,4 @@ Wykorzystane technologie:
 
 Shortlinks:
 
-Github pages deployment: https://piotrpawlowski7.github.io/cl_finalproject/
+<!-- Github pages deployment: https://piotrpawlowski7.github.io/cl_finalproject/ -->
