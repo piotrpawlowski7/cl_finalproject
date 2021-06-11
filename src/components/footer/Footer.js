@@ -1,15 +1,22 @@
-import './Footer.scss';
+import "./Footer.scss";
 
 function Footer() {
-    return (
-
-<footer>
-    <div className="row justify-content-center">
-<p>Twitter, Inc. 1355 Market St, Suite 900 San Francisco,</p><p> CA 94103 P: (123) 456-7890</p> &nbsp;<p>| xd freebies xdfreebies@gmail.com</p>
-    </div>
-</footer>
-
-    );
+  return (
+    <footer>
+      <div classname="footer_container">
+        <div className="row justify-content-center">
+          <p>Sofia, Inc. Smart Solution Finder v0.9&nbsp;</p>
+          <p> - in development</p> &nbsp;
+          <p>
+            | contact{" "}
+            <a href="mailto:ppawlowski+sofia@gmail.com">
+              ppawlowski+sofia@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;

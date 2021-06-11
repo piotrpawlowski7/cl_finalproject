@@ -49,7 +49,7 @@ export default function Solutions() {
 
   const updateSolution = (id, updatedSolution) => {
     setEditing(false);
-    console.log(id, "iddddd");
+    console.log("iddddd:", id);
     setCurrentSolution(
       solutions.map((solution) =>
         solution.id === id ? updatedSolution : solution
@@ -68,7 +68,7 @@ export default function Solutions() {
         link: updatedSolution.link,
         category: updatedSolution.category,
         description: updatedSolution.description,
-        tags: [updatedSolution.tags],
+        tags: updatedSolution.tags,
       }),
     })
       .then((response) => response.json())
@@ -119,15 +119,13 @@ export default function Solutions() {
     });
   };
 
-  
-
   return (
     <>
       <div className="wrapper">
         {editing ? (
           <Fragment>
             <h2>Edytuj rozwiązanie</h2>
-          
+
             <EditSolutionForm
               editing={editing}
               setEditing={setEditing}
@@ -142,7 +140,6 @@ export default function Solutions() {
         )}
       </div>
       <div className="container-fluid">
-     
         <div className="row">
           <div className="table-responsive">
             <table className="table">
@@ -190,7 +187,6 @@ export default function Solutions() {
                   </td>
                   <td>
                     <div className="td_el tags_list">
-                      
                       <ul>
                         {solution.tags.map((tag) => (
                           <li key={tag}>
@@ -212,7 +208,7 @@ export default function Solutions() {
                       <ul className="list-inline m-0">
                         <li className="list-inline-item">
                           <button
-                            className="btn btn-success btn-sm rounded-0"
+                            className="btn btn-success btn-sm rounded-0 btn-control"
                             type="button"
                             data-toggle="tooltip"
                             data-placement="top"
@@ -232,7 +228,7 @@ export default function Solutions() {
                         <li className="list-inline-item">
                           <button
                             onClick={() => handleRemoveSolution(solution.id)}
-                            className="btn btn-danger btn-sm rounded-0"
+                            className="btn btn-danger btn-sm rounded-0 btn-control"
                             type="button"
                             data-toggle="tooltip"
                             data-placement="top"
