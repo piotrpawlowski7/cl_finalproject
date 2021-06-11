@@ -1,34 +1,30 @@
 .tagscloud {
-    margin:50px;
+  margin: 50px;
 
-
-& button {
-    margin:4px 4px 4px 4px;
-}
+  & button {
+    margin: 4px 4px 4px 4px;
+  }
 }
 
 .tags ul {
-    list-style: none;
-    display: flex;
-    padding-left: 0px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  list-style: none;
+  display: flex;
+  padding-left: 0px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // align-content: center;
+  // justify-content: center;
+  align-items: center;
 }
 
+@media screen and (max-width: 600px) {
+  .td_el {
+    justify-content: left;
+  }
 
-@media screen and (max-width:600px) {
-
-    .td_el {
-        justify-content: left;
-    }
-
-    .td_el ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-       
-    }  
+  .td_el ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
 }

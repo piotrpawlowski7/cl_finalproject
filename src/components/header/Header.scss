@@ -1,14 +1,33 @@
 header {
-    margin-top:50px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.header_container {
+  display: flex !important;
+  align-content: space-around;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
 
-    & h1 {
-        margin-bottom:20px;
-    }
+  & h1 {
+    margin-bottom: 20px;
+  }
+
+  & h4 {
+    margin-left: 6px;
+  }
+
+  .container {
+    max-width: 45%;
+    margin-bottom: 0px;
+  }
 }
 
 .header__tagscloud {
-    margin: 0 auto;
-        width:80%;
-    }
-
-
+  margin: 0 auto;
+  width: 60%;
+}

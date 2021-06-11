@@ -2,6 +2,14 @@ Form {
   .btn {
     font-size: 1rem;
   }
+
+  .description__input {
+    min-width: 446px;
+  }
+
+  textarea.form-control {
+    height: 38px;
+  }
 }
 
 .addsolution {
