@@ -22,8 +22,7 @@
         "custom",
         "bootstrap",
         "css",
-        "framework",
-        "feature"
+        "framework"
       ],
       "id": 2
     },
@@ -158,6 +157,17 @@
         "article"
       ],
       "id": 14
+    },
+    {
+      "image": "https://ichi.pro/assets/images/max/724/1*SQdK1oLDvGecynYvKDKzzQ.png",
+      "name": "Gatsby Scroll to top",
+      "link": "https://www.gatsbyjs.com/plugins/gatsby-plugin-smoothscroll/#examples-of-usage",
+      "category": "Projekt własny",
+      "description": "Dodanie przewijania do formularza po kliknięciu \"edit\", \"gatsby-plugin-smoothscroll\"",
+      "tags": [
+        "upgrade"
+      ],
+      "id": 16
     }
   ]
 }
