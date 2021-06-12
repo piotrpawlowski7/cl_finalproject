@@ -8,6 +8,9 @@
 
 Pozwala agregować w wygodny i prosty sposób dodawane przez użytkownika customowe rozwiązania technologiczne wykorzystywane przy tworzeniu stron internetowych, oraz pozwala wyszukiwać je po kategoriach i tagach.
 
+## Podsumownie projektu 
+Podsumowanie projektu w postaci prezentacji w aplikacji Milaone znajdziesz tutaj: [Roadmap]
+
 
 ## 🔭 Wykorzystane technologie:
 - React
@@ -53,3 +56,8 @@ npm start
 
 <!-- Shortlinks: -->
 <!-- Github pages deployment: https://piotrpawlowski7.github.io/cl_finalproject/ -->
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+[Coderslab final project]: <https://github.com/piotrpawlowski7/cl_finalproject>
+[Roadmap]: <https://app.milanote.com/1LRpJy1LMmDn7n?p=DYZkqyYZUrK>
