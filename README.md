@@ -4,7 +4,7 @@
 
 [![Solution|Screenshot](https://i.postimg.cc/hvb1xLLr/Zrzut-ekranu-2021-06-12-001942.png)](https://github.com/piotrpawlowski7/cl_finalproject/)
 
-Prosty agregator rozwiązań technologicznych.
+### Prosty agregator rozwiązań technologicznych.
 
 Pozwala agregować w wygodny i prosty sposób dodawane przez użytkownika customowe rozwiązania technologiczne wykorzystywane przy tworzeniu stron internetowych, oraz pozwala wyszukiwać je po kategoriach i tagach.
 
@@ -36,13 +36,15 @@ Pozwala agregować w wygodny i prosty sposób dodawane przez użytkownika custom
 - Scrollowoanie do formularza
 
 ## 📝 Instalacja
-
-```npm install
+>npm install
+```
+npm install
 ```
 
 ## 📄  Start
-
-```npm start
+>npm start
+```
+npm start
 ```
 
 <!-- Shortlinks: -->
