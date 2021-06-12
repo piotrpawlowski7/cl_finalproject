@@ -42,11 +42,11 @@ npm install
 ```
 
 ## 📄  Start
-First start
+Najpierw należy odpalić json-server (default port:3000 - Aaplikacja ma ustawiony port:3000 dla komunikacji z API)
 ```
 json-server --watch data/db.json
 ```
-Next deploy react app:
+Następnie wystartuj aplikację
 ```
 npm start
 ```
