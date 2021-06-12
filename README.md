@@ -24,7 +24,7 @@ Pozwala agregować w wygodny i prosty sposób dodawane przez użytkownika custom
 - Edycja istniejących rozwiązań
 - Tagowanie rozwiązań
 
-## 📲 Next steps
+## 📲 Next development steps
 - Wyszukiwarka
 - agregowanie po tagach
 - autocomplete
@@ -33,7 +33,7 @@ Pozwala agregować w wygodny i prosty sposób dodawane przez użytkownika custom
 - Sortowanie
 - Json server -> Firebase
 - Dark mode
-- Scrollowoanie do formularza
+- Scrollowonie do formularza
 
 ## 📝 Instalacja
 
