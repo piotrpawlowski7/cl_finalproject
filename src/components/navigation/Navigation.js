@@ -16,7 +16,7 @@ function Navigation() {
     <>
       <Router>
         <Navbar bg="dark" variant="dark">
-          <Navbar.Brand>Sofia</Navbar.Brand>
+          <Navbar.Brand>Sofi´a</Navbar.Brand>
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/howto">How to use</Nav.Link>

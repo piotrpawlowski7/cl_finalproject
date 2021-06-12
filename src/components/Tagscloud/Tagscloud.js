@@ -10,15 +10,13 @@ function Tagscloud() {
     fetch(`${API_URL}/solutions`)
       .then((response) => response.json())
       .then((singleSolution) => setSolutions(singleSolution));
-    console.log("USEFFECT_SOLUTIONS" + solutions);
   }, [invalidationToken]);
-  console.log(solutions);
 
   if (solutions.length === 0) {
     return null;
   }
 
-  const uniqueSolutions = [];
+  // const uniqueSolutions = [];
 
   return (
     <>

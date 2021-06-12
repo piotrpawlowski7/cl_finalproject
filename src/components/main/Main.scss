@@ -1,40 +1,39 @@
 main {
   max-width: 90%;
   margin: 0 auto;
-}
 
+ ul .btn {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    margin: 2px 2px 2px 2px;
+  }
 
-main .btn {
-  padding: 0.2rem 0.5rem;
-  font-size: 0.75rem;
-  margin: 2px 2px 2px 2px;
-}
+  .td_el {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 90px;
+  }
 
-main .td_el {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 90px;
-}
+  th {
+    text-align: center;
+  }
 
-main th {
-  text-align: center;
-}
+  .content-control {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 90px;
+  }
 
-main .content-control {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 90px;
-}
+  .content-control ul {
+    display: flex;
+    flex-direction: column;
+  }
 
-main .content-control ul {
-  display: flex;
-  flex-direction: column;
-}
-
-.table .btn-control {
+  .table .btn-control {
     padding: 0.15rem 0.35rem;
     font-size: 0.605rem;
     margin: 1px;
+  }
 }

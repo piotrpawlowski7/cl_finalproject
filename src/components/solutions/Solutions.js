@@ -3,10 +3,6 @@ import React, { useState, useEffect, Fragment } from "react";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
-import FormControl from "react-bootstrap/FormControl";
 import EditSolutionForm from "./EditSolutionForm";
 import "./AddSolution.scss";
 import AddSolution from "../solutions/AddSolution";
@@ -49,7 +45,6 @@ export default function Solutions() {
 
   const updateSolution = (id, updatedSolution) => {
     setEditing(false);
-    console.log("iddddd:", id);
     setCurrentSolution(
       solutions.map((solution) =>
         solution.id === id ? updatedSolution : solution
@@ -97,25 +92,6 @@ export default function Solutions() {
       category: solution.category,
       tags: solution.tags,
       description: solution.description,
-    });
-  };
-
-  function refreshPage() {
-    setTimeout(function () {
-      window.location.reload(1);
-    }, 1000);
-  }
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    console.log(name);
-    console.log(value);
-    setForm((prevState) => {
-      // console.log(prevState)
-      return {
-        ...prevState,
-        [name]: value,
-      };
     });
   };
 

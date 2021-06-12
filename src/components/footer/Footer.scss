@@ -4,12 +4,11 @@ footer {
   margin-top: 100px;
   margin: 20px;
 
-  & .row {
+  .row {
     margin-right: 0px;
     margin-left: 0px;
   }
-}
-
-footer > div > div > p {
-  padding-bottom: 20px;
+  div > div > p {
+    padding-bottom: 20px;
+  }
 }

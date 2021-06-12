@@ -4,11 +4,12 @@
       "image": "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80",
       "name": "submenu dla działu tech",
       "link": "http://www.w3schools.com",
-      "category": "custom",
-      "description": "Przygotowano customowo menu dla wewnetrznej sekcji",
+      "category": "natywne",
+      "description": "Przygotowano customowo menu dla wewnetrznej sekcji. Tak.",
       "tags": [
         "menu",
-        "tech"
+        "tech",
+        "natywne"
       ],
       "id": 1
     },
