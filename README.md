@@ -36,13 +36,13 @@ Pozwala agregować w wygodny i prosty sposób dodawane przez użytkownika custom
 - Scrollowoanie do formularza
 
 ## 📝 Instalacja
->npm install
+
 ```
 npm install
 ```
 
 ## 📄  Start
->npm start
+
 ```
 npm start
 ```
