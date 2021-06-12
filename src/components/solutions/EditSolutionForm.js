@@ -44,15 +44,8 @@ const EditSolutionForm = (props) => {
   // };
 
   function handleChange(value) {
-    console.log(`sol.tags before func  ${solution.tags}`);
-    console.log(`value before func: ` + value);
-
     solution.tags = [];
-    console.log(`after clear:  ${solution.tags}`);
     solution.tags = [...value];
-    console.log(`value after mapping: ` + value);
-    console.log(`sol.tags after mapping: ${solution.tags}`);
-    console.log(solution);
   }
 
   return (
@@ -60,8 +53,6 @@ const EditSolutionForm = (props) => {
     <>
       <form
         onSubmit={(event) => {
-          console.log(solution.id);
-          console.log(solution);
           event.preventDefault();
           props.updateSolution(solution.id, solution);
         }}

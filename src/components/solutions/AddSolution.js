@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
@@ -56,10 +56,7 @@ export default function AddSolution() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name);
-    console.log(value);
     setForm((prevState) => {
-      // console.log(prevState)
       return {
         ...prevState,
         [name]: value,
@@ -75,21 +72,14 @@ export default function AddSolution() {
   }
 
   function handleTagChange(value) {
-    console.log(`sol.tags before func  ${form.tags}`);
-    console.log(`value before func: ` + value);
-
     form.tags = [];
-    console.log(`after clear:  ${form.tags}`);
     form.tags = [...value];
-    console.log(`value after mapping: ` + value);
-    console.log(`sol.tags after mapping: ${form.tags}`);
-    console.log(form);
   }
 
   return (
     <div className="wrapper addsolution">
       <h2>Dodaj rozwiązanie</h2>
-      {submitting && <div>Zapisywanie...</div>}
+      {submitting && <div style={{ marginBottom: 20 }}>Zapisywanie...</div>}
 
       <Form onSubmit={handleSubmit}>
         <Form.Row className="align-items-center">

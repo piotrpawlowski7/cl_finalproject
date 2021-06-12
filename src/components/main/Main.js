@@ -1,5 +1,6 @@
-import "./Main.scss";
 import Solutions from "../solutions/Solutions";
+
+import "./Main.scss";
 
 function Main() {
   return (

@@ -8,7 +8,7 @@ function Header() {
         <div className="header_container">
           <div className="container">
             <div className="row">
-              <h1>Hi, I'm Sofia.</h1>{" "}
+              <h1>Hi, I'm Sofi´a.</h1>{" "}
               <h4>(Aspiring to be smart) Solution Finder</h4>
             </div>
             <div className="row">
