@@ -42,7 +42,11 @@ npm install
 ```
 
 ## 📄  Start
-
+First start
+```
+json-server --watch data/db.json
+```
+Next deploy react app:
 ```
 npm start
 ```
